@@ -9,3 +9,7 @@ Every file in the library corresponds to particular namespace, where functions f
 
 * .math.a - is algebra namespace. Placed in algebra.q
 * .math.st - is statistics namespace. Placed in statistics.q
+
+### kdb+ support
+Tested on kdb 3.5+ versions.
+Shakti support is planned as well (could require separate codebase library though)
