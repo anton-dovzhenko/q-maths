@@ -12,4 +12,4 @@ Every file in the library corresponds to particular namespace, where functions f
 
 ### kdb+ support
 Tested on kdb 3.5+ versions.
-Shakti support is planned as well (could require separate codebase library though)
+Shakti support is planned as well (could require separate codebase though)
