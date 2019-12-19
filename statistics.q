@@ -19,3 +19,19 @@
 // Example: .math.st.choose[5;2] returns (0 1;0 2;0 3;0 4;1 2;1 3;1 4;2 3;2 4;3 4)
 // FIXME: use more efficient algorithm to generate choices
 .math.st.choose: {[n;k] distinct asc each .math.st.accommodation[n;k]};
+
+
+// Returns correlation matrix (Pearson)
+// @n [`$()] - list of series' names
+// @v [`$number] - list of series' values
+// Example: .math.st.corrm[`n1`n2`n3;(1 2 3;4 5 7; 9 6 4)]
+// returns flip `name`n1`n2`n3!(`n1`n2`n3;1 0.98 -0.99;0.98 1 -0.95;-0.99 -0.95 1)
+// numbers are rounded to second digit after decimal point
+.math.st.corrm: {[n;v]
+    N: count n;
+    c: .math.st.choose[N;2];
+    Cor: c!(cor') . v@(flip c) 0 1;
+    Cor,: (reverse each key Cor)!value Cor;
+    Cor,: (2#'enlist each til N)!N#1f;
+    flip (`name,n) ! enlist[n], N cut 1f^Cor{x cross x}til N
+ };
