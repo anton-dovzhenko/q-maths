@@ -30,8 +30,8 @@
 .math.st.corrm: {[n;v]
     N: count n;
     c: .math.st.choose[N;2];
-    Cor: c!(cor') . v@(flip c) 0 1;
-    Cor,: (reverse each key Cor)!value Cor;
-    Cor,: (2#'enlist each til N)!N#1f;
-    flip (`name,n) ! enlist[n], N cut 1f^Cor{x cross x}til N
+    C: c!(cor') . v@(flip c) 0 1;
+    C,: (reverse each key C)!value C;
+    C,: (2#'enlist each til N)!N#1f;
+    flip (`name,n) ! enlist[n], N cut C {x cross x}til N
  };
