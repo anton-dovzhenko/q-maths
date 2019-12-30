@@ -38,3 +38,25 @@
     C,: (2#'enlist each til N)!N#1f;
     flip (`name,n) ! enlist[n], N cut C {x cross x}til N
  };
+
+
+// @t [flip] - table to pivot
+// @rc [`$()] - row fields
+// @cf [`symbol] - column fields
+// @ff [dictionary] - fact fields
+// Example: .math.st.pivot[
+//     flip(`instrument`date`client`amount`spread)!
+//        (`EURUSD`EURUSD`USDJPY`USDJPY`USDJPY;
+//        2019.01.01 2019.01.01 2019.01.01 2019.01.02 2019.01.02;
+//        5#`clientA`clientB;
+//        10*1+til 5;
+//        0.01*1+til 5);
+//     enlist`instrument;`date;enlist[`amount]!enlist sum]
+// returns 1!flip (`instrument`2019.01.01_amount`2019.01.02_amount!(`EURUSD`USDJPY;30 30;0N 90))
+.math.st.pivot: {[t;rc;cf;ff]
+    P: asc distinct t cf;
+    Pcol: `$string[P] cross "_",/:string key ff;
+    t: ?[t;();rc!rc;key[ff]!{({[x;y;z] z each y@group x}[;;z];x;y)}[cf]'[key ff;value ff]];
+    t: ![t;();0b; Pcol! raze {((';@);x;$[-11h=type y;enlist;::] y)}'[key ff]'[P] ];
+    ![t;();0b;key ff]
+ };
