@@ -1,3 +1,8 @@
+$[enlist[9]~.math.st.mode 1 1 2 2 5 5 9 9 9 8 8 7;0N!".math.st.mode case 1 (univariate) PASSED";'".math.st.mode case 1 (univariate) FAILED"];
+$[3 4~.math.st.mode 1 1 1 2 2 2 3 3 3 3 4 4 4 4 8 8;0N!".math.st.mode case 2 (bivariate) PASSED";'".math.st.mode case 2 (bivariate) FAILED"];
+$[`a`b`c~.math.st.mode (12#`d`e`f),(15#`a`b`c);0N!".math.st.mode case 3 (multivariate) PASSED";'".math.st.mode case 3 (multivariate) FAILED"];
+
+
 $[not all {
     ((1!flip `instrument`2019.01.01_amount`2019.01.02_amount!(`EURUSD`USDJPY;30 30;0N 90))
         ~.math.st.pivot[x;enlist`instrument;`date;enlist[`amount]!enlist sum];

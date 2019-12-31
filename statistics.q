@@ -24,6 +24,12 @@
 .math.st.choose: {[n;k] distinct asc each .math.st.accommodation[n;k]};
 
 
+// Returns mode of input list
+// @x [()] - arbitrary list
+// Example: .math.st.mode[9 9 9 3 3 2 1 1] returns enlist 9
+.math.st.mode: {where x=max x:count each group x};
+
+
 // Returns correlation matrix (Pearson)
 // @n [`$()] - list of series' names
 // @v [`$number] - list of series' values
@@ -42,7 +48,7 @@
 
 // @t [flip] - table to pivot
 // @rc [`$()] - row fields
-// @cf [`symbol] - column fields
+// @cf [`symbol] - column field
 // @ff [dictionary] - fact fields
 // Example: .math.st.pivot[
 //     flip(`instrument`date`client`amount`spread)!
