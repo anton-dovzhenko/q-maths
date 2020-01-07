@@ -66,3 +66,14 @@
     t: ![t;();0b; Pcol! raze {((';@);x;$[-11h=type y;enlist;::] y)}'[key ff]'[P] ];
     ![t;();0b;key ff]
  };
+
+
+// Generates sample from Normal distribution N(@m, @sd^2)of size @n using Box-Muller transform
+// @n - number of observations
+// @m - mean
+// @sd - standard deviation
+.math.st.rnorm: {[n;m;sd]
+    u1: n?1f;
+    u2: n?1f;
+    m + sd * sqrt[-2*log u1] * cos 2*u2*.math.c.pi
+ };

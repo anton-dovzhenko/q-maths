@@ -9,7 +9,8 @@ Every file in the library corresponds to particular namespace, where functions f
 
 * .math.a is algebra namespace. Placed in algebra.q
 * .math.b is bitwise operations namespace. Placed in bit.q
-* .math.st is statistics namespace. Placed in statistics.q
+* .math.c is constants namespace. Placed in constants.q
+* .math.st is statistics namespace. Placed in statistics.q (requires .math.c)
 
 ### kdb+ support
 Tested on kdb 3.5+ versions.
