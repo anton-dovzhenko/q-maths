@@ -30,6 +30,17 @@
 .math.st.mode: {where x=max x:count each group x};
 
 
+// Returns quantiles @p of numeric list @x
+// @x [`numeric()] - numeric list
+// @p [`float$()] - list of probabilities
+.math.st.quantile: {[x;y]
+    x: asc x;
+    step: (1%-1+count x);
+    leftXi:`int$(step xbar y)%step;
+    x[leftXi]+0f^((y mod step)%step)*x[leftXi+1]-x[leftXi]
+ };
+
+
 // Returns correlation matrix (Pearson)
 // @n [`$()] - list of series' names
 // @v [`$number] - list of series' values
@@ -69,9 +80,9 @@
 
 
 // Generates sample from Normal distribution N(@m, @sd^2)of size @n using Box-Muller transform
-// @n - number of observations
-// @m - mean
-// @sd - standard deviation
+// @n [`int]  - number of observations
+// @m [`float] - mean
+// @sd [`float] - standard deviation
 .math.st.rnorm: {[n;m;sd]
     u1: n?1f;
     u2: n?1f;
