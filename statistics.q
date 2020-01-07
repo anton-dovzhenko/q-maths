@@ -30,13 +30,14 @@
 .math.st.mode: {where x=max x:count each group x};
 
 
-// Returns quantiles @p of numeric list @x
+// Returns float list of quantiles @p taken on numeric list @x
 // @x [`numeric()] - numeric list
 // @p [`float$()] - list of probabilities
+// Example: .math.st.quantile[8 0 2 3 0 9 2 9 6 5;0 0.25 0.5 0.75 1] returns 0 2 4 7.5 9
 .math.st.quantile: {[x;y]
     x: asc x;
     step: (1%-1+count x);
-    leftXi:`int$(step xbar y)%step;
+    leftXi: `int$(step xbar y)%step;
     x[leftXi]+0f^((y mod step)%step)*x[leftXi+1]-x[leftXi]
  };
 
@@ -83,6 +84,7 @@
 // @n [`int]  - number of observations
 // @m [`float] - mean
 // @sd [`float] - standard deviation
+// Example: .math.st.rnorm[10;0;1] returns sample of size ten of N(0, 1)
 .math.st.rnorm: {[n;m;sd]
     u1: n?1f;
     u2: n?1f;
