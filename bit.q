@@ -41,11 +41,11 @@
 // @x [`int or `long] - integer
 // @y [`int or `long] - number of positions to shift
 // Example: .math.b.shiftLeft[7;1] returns 14
-.math.b.shiftLeft: {2 sv (2 vs x), y#0b};
+.math.b.shiftLeft: {x * 2 xexp y};
 
 
 // .math.b.shiftRight shifts bit pattern to the right
 // @x [`int or `long] - integer
 // @y [`int or `long] - number of positions to shift
 // Example: .math.b.shiftRight[7;1] returns 3
-.math.b.shiftRight: {2 sv neg[y]_2 vs x};
+.math.b.shiftRight: {floor x * 0.5 xexp y};
