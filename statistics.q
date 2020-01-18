@@ -42,6 +42,20 @@
  };
 
 
+// Returns Spearman correlation
+// @x [`numeric()] - numeric list
+// @y [`numeric()] - numeric list
+// Example: .math.st.corspearman[1 2 3;6 3 4] returns -0.5
+.math.st.corspearman: {rank[x] cor rank y};
+
+
+// Returns Kendall correlation
+// @x [`numeric()] - numeric list
+// @y [`numeric()] - numeric list
+// Example: .math.st.corkendall[1 2 3;6 3 4] returns -0.33
+.math.st.corkendall: {(2%c*c-1) * sum (signum raze (til c)_'x-/:\:x) * signum raze (til c:count y)_'y-/:\:y};
+
+
 // Returns correlation matrix (Pearson)
 // @n [`$()] - list of series' names
 // @v [`$number] - list of series' values
