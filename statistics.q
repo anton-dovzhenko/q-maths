@@ -23,21 +23,39 @@
 .math.st.comb: {[n;k] distinct asc each .math.st.perm[n;k]};
 
 
-// Returns mode of input list
+// Returns mode
 // @x [()] - arbitrary list
 // Example: .math.st.mode[9 9 9 3 3 2 1 1] returns enlist 9
 .math.st.mode: {where x=max x:count each group x};
 
 
-// Returns float list of quantiles @p taken on numeric list @x
-// @x [`numeric()] - numeric list
-// @p [`float$()] - list of probabilities
+// Returns quantiles
+// @x [`numeric()] - numeric values
+// @p [`float$()] - probabilities
 // Example: .math.st.quantile[8 0 2 3 0 9 2 9 6 5;0 0.25 0.5 0.75 1] returns 0 2 4 7.5 9
-.math.st.quantile: {[x;y]
+.math.st.quantile: {[x;p]
     x: asc x;
     step: (1%-1+count x);
-    leftXi: `int$(step xbar y)%step;
+    leftXi: `int$(step xbar p)%step;
     x[leftXi]+0f^((y mod step)%step)*x[leftXi+1]-x[leftXi]
+ };
+
+// Returns weighted quantiles.
+// TO avoid ambiguity, weights list @w must be integers and its sum should be within long range.
+// @x [`numeric()] - numeric values
+// @p [`float$()] - probabilities
+// @w [`int$()] - weights
+// Example: .math.st.quantile[8 0 2 3 0 9 2 9 6 5;0 0.25 0.5 0.75 1] returns 0 2 4 7.5 9
+.math.st.wquantile: {[x;p;w]
+    i: iasc x;
+    x: x@i;
+    w: w@i;
+    w: -1+sums `long$w;
+    step: 1%last w;
+    leftXi: `int$(step xbar p)%step;
+    xl: x@w binr leftXi;
+    xr: x@w binr leftXi+1;
+    xl+0f^((p mod step)%step)*xr-xl
  };
 
 
