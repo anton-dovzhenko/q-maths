@@ -1,3 +1,7 @@
+$[(0 1 2;0 2 1;1 0 2;1 2 0;2 0 1;2 1 0) ~ .math.st.perm0[3];0N!".math.st.perm0 case 1 PASSED";'".math.st.perm0 case 1 FAILED"];
+$[(0 1;0 2;0 3;0 4;1 0;1 2;1 3;1 4;2 0;2 1;2 3;2 4;3 0;3 1;3 2;3 4;4 0;4 1;4 2;4 3) ~ .math.st.perm[5;2];0N!".math.st.perm case 1 PASSED";'".math.st.perm case 1 FAILED"];
+$[(0 1;0 2;0 3;0 4;1 2;1 3;1 4;2 3;2 4;3 4) ~ .math.st.comb[5;2];0N!".math.st.comb case 1 PASSED";'".math.st.comb case 1 FAILED"];
+
 $[enlist[9]~.math.st.mode 1 1 2 2 5 5 9 9 9 8 8 7;0N!".math.st.mode case 1 (univariate) PASSED";'".math.st.mode case 1 (univariate) FAILED"];
 $[3 4~.math.st.mode 1 1 1 2 2 2 3 3 3 3 4 4 4 4 8 8;0N!".math.st.mode case 2 (bivariate) PASSED";'".math.st.mode case 2 (bivariate) FAILED"];
 $[`a`b`c~.math.st.mode (12#`d`e`f),(15#`a`b`c);0N!".math.st.mode case 3 (multivariate) PASSED";'".math.st.mode case 3 (multivariate) FAILED"];
