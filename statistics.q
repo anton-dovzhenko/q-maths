@@ -81,7 +81,7 @@
 // numbers are rounded to second digit after decimal point
 .math.st.corrm: {[n;v]
     N: count n;
-    c: .math.st.choose[N;2];
+    c: .math.st.perm[N;2];
     C: c!(cor') . v@(flip c) 0 1;
     C,: (reverse each key C)!value C;
     C,: (2#'enlist each til N)!N#1f;
