@@ -22,7 +22,7 @@
 // FIXME: use more efficient algorithm to generate choices
 .math.st.comb: {[n;k] distinct asc each .math.st.perm[n;k]};
 
-// Returns distribution's y^{th} moment
+// Returns distribution's standardized y^{th} moment
 // @x [`number$()] - distribution
 // @y [`int] - distribution moment
 .math.st.stdmom: {avg ((x-avg x)%dev x) xexp y};
