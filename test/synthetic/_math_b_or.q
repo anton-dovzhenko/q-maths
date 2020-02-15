@@ -99,4 +99,4 @@ $[not all {x[2]=.math.b.or . x 0 1} each (
     470283 735711 998879;
     702194 383645 1048319;
     453889 13613 458029
-);'"[AssertionError] .math.b.or symthetic test FAILED";0N!".math.b.or symthetic test PASSED"];
+);'"[AssertionError] .math.b.or synthetic test FAILED";0N!".math.b.or synthetic test PASSED"];

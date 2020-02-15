@@ -19,5 +19,5 @@ $[not all {x[2]~.math.st.quantile . x 0 1} each (
     (1 8 5 9 10 12 17 9 9f; 0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1; 1 4.2 6.8 8.4 9 9 9 9.6 10.8 13 17f);
     (1 14 7 16 6 8 8 20 10 16f; 0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1; 1 5.5 6.8 7.7 8 9 11.6 14.6 16 16.4 20f);
     (5 11 15 17 15f; 0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1; 5 7.4 9.8 11.8 13.4 15 15 15 15.4 16.2 17f)
- );'"[AssertionError] .math.st.quantiletest FAILED";0N!".math.st.quantile test PASSED"];
+ );'"[AssertionError] .math.st.quantile synthetic test FAILED";0N!".math.st.quantile synthetic test PASSED"];
 

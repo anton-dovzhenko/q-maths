@@ -99,4 +99,4 @@ $[not all {x[2] = .math.b.and . x 0 1} each
 933941 540242 524304;
 637702 345716 66052;
 882901 531995 530449)
-;'"[AssertionError] .math.b.and symthetic test FAILED";0N!".math.b.and symthetic test PASSED"];
+;'"[AssertionError] .math.b.and synthetic test FAILED";0N!".math.b.and synthetic test PASSED"];

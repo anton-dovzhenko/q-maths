@@ -11,4 +11,4 @@ $[not all {1e-6>abs x[2] - .math.st.corspearman . x 0 1} each
         (4 74 82 6 40 33 17 98 55 85 7 95 21 22 27 66 52 100 78; 37 9 61 62 5 83 100 14 85 34 80 13 56 38 69 76 30 12 59; -0.4736842);
         (7 10 72 33 54 80 41 15 50 59 97 4 16 53 3 51; 86 59 48 44 23 30 32 28 62 98 69 13 4 75 40 73; 0.2647059)
     )
-;'"[AssertionError] .math.st.corspearman symthetic test FAILED";0N!".math.st.corspearman symthetic test PASSED"];
+;'"[AssertionError] .math.st.corspearman synthetic test FAILED";0N!".math.st.corspearman synthetic test PASSED"];

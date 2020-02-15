@@ -101,4 +101,4 @@ $[not all {x[2] = .math.b.xor . x 0 1} each
 639809 446860 987853;
 894985 534708 360637
 )
-;'"[AssertionError] .math.b.xor symthetic test FAILED";0N!".math.b.xor symthetic test PASSED"];
+;'"[AssertionError] .math.b.xor synthetic test FAILED";0N!".math.b.xor synthetic test PASSED"];

@@ -9,4 +9,4 @@ $[all {all 1e-6>abs last[x]-.math.st.wquantile . 3#x} each (
     (2 6 9 4 10 3 7 1 5 8; 0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1; 1 4 2 6 7 1 6 1 6 5; 1 4 4 5 6 7 7 8 9 10 10);
     (10 7 6 4 3 8 9 2 1 5; 0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1; 5 10 9 3 10 4 6 6 10 6; 1 1 2 3 4 5 6 7 8 9 10);
     (6 5 8 7 10 1 2 3 4 9; 0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1; 1 1 5 4 4 8 5 4 9 9; 1 1 2 3 4 4 7 8 9 9 10)
- );0N!".math.st.wquantile test PASSED";'"[AssertionError] .math.st.wquantile test FAILED"];
+ );0N!".math.st.wquantile synthetic test PASSED";'"[AssertionError] .math.st.wquantile synthetic test FAILED"];

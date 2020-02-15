@@ -22,6 +22,21 @@
 // FIXME: use more efficient algorithm to generate choices
 .math.st.comb: {[n;k] distinct asc each .math.st.perm[n;k]};
 
+// Returns distribution's y^{th} moment
+// @x [`number$()] - distribution
+// @y [`int] - distribution moment
+.math.st.stdmom: {avg ((x-avg x)%dev x) xexp y};
+
+
+// Returns distribution's skewness
+// @x [`number$()] - distribution
+.math.st.skewness: .math.st.stdmom[;3];
+
+
+// Returns distribution's kurtosis.
+// Not adjusted by -3, i.e. .math.st.kurtosis of normal distribution N(0,1) is 3.
+// @x [`number$()] - distribution
+.math.st.kurtosis: .math.st.stdmom[;4];
 
 // Returns mode
 // @x [()] - arbitrary list

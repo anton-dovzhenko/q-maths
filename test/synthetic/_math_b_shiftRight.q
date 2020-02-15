@@ -29,4 +29,4 @@ $[not all {x[2]=.math.b.shiftRight . x 0 1} each (
 752493 1 376246;
 752493 2 188123;
 752493 3 94061
-);'"[AssertionError] .math.b.shiftRight symthetic test FAILED";0N!".math.b.shiftRight symthetic test PASSED"];
+);'"[AssertionError] .math.b.shiftRight synthetic test FAILED";0N!".math.b.shiftRight synthetic test PASSED"];
