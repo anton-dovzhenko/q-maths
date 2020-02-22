@@ -27,3 +27,18 @@
    if[not x=1; F,:`long$x];
    count each group F
  };
+
+// Multiplies matrices. Matrix is defined as list of column values.
+// mmu operation is defined in Q, see https://code.kx.com/q/ref/mmu/,
+// but it works only with floats.
+// In Q matrix
+// (0  1  2)
+// (3  4  5)
+// (6  7  8)
+// (9 10 11)
+// is defined as list of columns: (0 3 6 9;1 4 7 10;2 5 8 11)
+// @x [numeric columnar matrix] - left matrix
+// @y [numeric columnar matrix] - right matrix
+// Example: .math.a.mmu[(0 3 6 9;1 4 7 10;2 5 8 11);(0 4 8;1 5 9;2 6 10;3 7 11)]
+// returns (20 56 92 128;23 68 113 158;26 80 134 188;29 92 155 218)
+.math.a.mmu: {flip(sum'')flip[x]*/:\:y};
