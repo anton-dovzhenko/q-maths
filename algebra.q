@@ -42,3 +42,16 @@
 // Example: .math.a.mmu[(0 3 6 9;1 4 7 10;2 5 8 11);(0 4 8;1 5 9;2 6 10;3 7 11)]
 // returns (20 56 92 128;23 68 113 158;26 80 134 188;29 92 155 218)
 .math.a.mmu: {flip(sum'')flip[x]*/:\:y};
+
+
+// Returns matrix determinant. Matrix is defined as list of column values.
+// Raw matrix definition is used for calculation.
+// @x - matrix as list of columns
+// Example: .math.a.mdet (7 1 3;8 9 4;6 2 5) returns 129
+.math.a.mdet: {
+    if[1>=count x;:x];
+    {
+        if[2=count x;:(x[0;0]*x[1;1])-x[0;1]*x[1;0]];
+        sum ({x*count[x]#1 -1}x 0)*.z.s each {x@\:/:{(til x) except/:til x}count x 0} 1_x
+     } flip x
+ };
