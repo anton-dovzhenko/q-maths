@@ -52,7 +52,7 @@
     x: asc x;
     step: (1%-1+count x);
     leftXi: `int$(step xbar p)%step;
-    x[leftXi]+0f^((y mod step)%step)*x[leftXi+1]-x[leftXi]
+    x[leftXi]+0f^((p mod step)%step)*x[leftXi+1]-x[leftXi]
  };
 
 // Returns weighted quantiles.
