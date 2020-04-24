@@ -11,6 +11,7 @@ Every file in the library corresponds to particular namespace, where functions f
 * .math.b is bitwise operations namespace. Placed in bit.q
 * .math.c is constants namespace. Placed in constants.q
 * .math.st is statistics namespace. Placed in statistics.q (requires .math.c)
+* .math.tz is timezone namespace. Placed in timezone.q (loads tz data from resources/tzinfo.csv)
 
 ### kdb+ support
 Tested on kdb 3.5+ versions.
