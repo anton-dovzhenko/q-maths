@@ -28,6 +28,7 @@
    count each group F
  };
 
+
 // Multiplies matrices. Matrix is defined as list of column values.
 // mmu operation is defined in Q, see https://code.kx.com/q/ref/mmu/,
 // but it works only with floats.

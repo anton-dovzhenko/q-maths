@@ -38,6 +38,7 @@
 // @x [`number$()] - distribution
 .math.st.kurtosis: .math.st.stdmom[;4];
 
+
 // Returns mode
 // @x [()] - arbitrary list
 // Example: .math.st.mode[9 9 9 3 3 2 1 1] returns enlist 9
