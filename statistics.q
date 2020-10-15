@@ -22,6 +22,13 @@
 // FIXME: use more efficient algorithm to generate choices
 .math.st.comb: {[n;k] distinct asc each .math.st.perm[n;k]};
 
+
+// Returns all subsets of input list including empty set.
+// @x [()] - arbitrary list of distinct elements
+// Example: .math.st.subsets `a`b returns (`$();enlist`b;enlist`a;`a`b)
+.math.st.subsets: {c: count x;x where each (neg c)#'(c#0b),/:`boolean$2 vs/: til `long$2 xexp c};
+
+
 // Returns distribution's standardized y^{th} moment
 // @x [`number$()] - distribution
 // @y [`int] - distribution moment

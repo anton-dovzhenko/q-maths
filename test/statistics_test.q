@@ -1,6 +1,7 @@
 $[(0 1 2;0 2 1;1 0 2;1 2 0;2 0 1;2 1 0) ~ .math.st.perm0[3];0N!".math.st.perm0 case 1 PASSED";'".math.st.perm0 case 1 FAILED"];
 $[(0 1;0 2;0 3;0 4;1 0;1 2;1 3;1 4;2 0;2 1;2 3;2 4;3 0;3 1;3 2;3 4;4 0;4 1;4 2;4 3) ~ .math.st.perm[5;2];0N!".math.st.perm case 1 PASSED";'".math.st.perm case 1 FAILED"];
 $[(0 1;0 2;0 3;0 4;1 2;1 3;1 4;2 3;2 4;3 4) ~ .math.st.comb[5;2];0N!".math.st.comb case 1 PASSED";'".math.st.comb case 1 FAILED"];
+$[(`$();enlist`b;enlist`a;`a`b) ~ .math.st.subsets`a`b;0N!".math.st.subsets case 1 PASSED";'".math.st.subsets case 1 FAILED"];
 
 $[1 1 2 2 3 4 4 5 6 7.6 10 ~ .math.st.wquantile[reverse 1+til 10; 0.1*til 11;1+til 10];0N!".math.st.wquantile case 1 PASSED";'".math.st.wquantile case 1 FAILED"];
 
