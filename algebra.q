@@ -29,6 +29,24 @@
  };
 
 
+// Returns inverse modulo (brute-force)
+// @x [`int or `long] - number
+// @y [`int or `long] - modulo
+.math.a.invmod: {{$[0=(-1+x*z) mod y;z;z+1]}[x mod y;y] over 1};
+
+
+// @m - divisors
+// @a - remainders
+.math.a.chineseRemainderSolver: {[m;a]
+    N: prd m;
+    Z: N div m;
+    Y: .math.a.invmod ./:Z,'m;
+    W: Y*Z;
+    X: sum (W*a) mod N;
+    (X mod N;N)
+ };
+
+
 // Multiplies matrices. Matrix is defined as list of column values.
 // mmu operation is defined in Q, see https://code.kx.com/q/ref/mmu/,
 // but it works only with floats.
