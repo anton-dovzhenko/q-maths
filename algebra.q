@@ -32,11 +32,13 @@
 // Returns inverse modulo (brute-force)
 // @x [`int or `long] - number
 // @y [`int or `long] - modulo
+// Example .math.a.getPrimeFactors[7;11] returns 8
 .math.a.invmod: {{$[0=(-1+x*z) mod y;z;z+1]}[x mod y;y] over 1};
 
 
 // @m - divisors
 // @a - remainders
+// Example .math.a.chineseRemainderSolver[3 4 5; 0 3 4] returns 39 60
 .math.a.chineseRemainderSolver: {[m;a]
     N: prd m;
     Z: N div m;
