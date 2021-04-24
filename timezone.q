@@ -8,9 +8,9 @@
 .math.tz.t: {
     data: ("SPJJ";enlist ",")0: x;
     data: update gmtOffset: `timespan$1000000000*gmtOffset from data;
-    data: update dstOffset:`timespan$1000000000*dstOffset from data;
-    data: update adjustment:gmtOffset+dstOffset from data;
-    data: update localDateTime:gmtDateTime+adjustment from data;
+    data: update dstOffset: `timespan$1000000000*dstOffset from data;
+    data: update adjustment: gmtOffset+dstOffset from data;
+    data: update localDateTime: gmtDateTime+adjustment from data;
     data: `gmtDateTime xasc data;
     data: update `g#timezoneID from data;
     data
@@ -42,3 +42,9 @@
 // @x [`date or `date$()] - date or list of dates
 // Example: .math.tz.weekOfYear 2019.12.31 + til 8 returns 52 0 0 0 0 0 1 1
 .math.tz.weekOfYear: {(x-`week$.math.tz.firstDayOfYear x) div 7};
+
+
+// .math.tz.getTradeDate returns conventional FX trading date which starts at 5pm New York time
+.math.tz.getTradeDate: {`date$.math.tz.gmtToLocal[ `$"America/New_York";x]+0D07};
+
+.math.tz.getWeekDay: {(til[7]!`6_Sat`7_Sun`1_Mon`2_Tue`3_Wed`4_Thu`5_Fri) x mod 7};
