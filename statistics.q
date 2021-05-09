@@ -2,6 +2,10 @@
 ///// Q-statistics package
 
 
+// Returns factorial. For x > 20 returns 0W to avoid wrong output due to integer overflow issue
+// @x [`int or `long]
+.math.st.fact: {$[x>20;0W;prd 1+til x]};
+
 // Returns list of all possible x-length permutations of integers from 0 to x-1
 // @n [`int or `long] - permutation length
 // Example: .math.st.perm0[3] returns (0 1 2;0 2 1;1 0 2;1 2 0;2 0 1;2 1 0)

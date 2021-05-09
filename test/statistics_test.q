@@ -1,3 +1,9 @@
+$[1 = .math.st.fact 0; 0N!".math.st.fact case 1 PASSED"; 0N!".math.st.fact case 1 FAILED"];
+$[1 = .math.st.fact 1; 0N!".math.st.fact case 2 PASSED"; 0N!".math.st.fact case 2 FAILED"];
+$[120 = .math.st.fact 5; 0N!".math.st.fact case 3 PASSED"; 0N!".math.st.fact case 3 FAILED"];
+$[2432902008176640000 = .math.st.fact 20; 0N!".math.st.fact case 4 PASSED"; 0N!".math.st.fact case 4 FAILED"];
+$[0W = .math.st.fact 21; 0N!".math.st.fact case 5 PASSED"; 0N!".math.st.fact case 5 FAILED"];
+
 $[(0 1 2;0 2 1;1 0 2;1 2 0;2 0 1;2 1 0) ~ .math.st.perm0[3];0N!".math.st.perm0 case 1 PASSED";'".math.st.perm0 case 1 FAILED"];
 $[(0 1;0 2;0 3;0 4;1 0;1 2;1 3;1 4;2 0;2 1;2 3;2 4;3 0;3 1;3 2;3 4;4 0;4 1;4 2;4 3) ~ .math.st.perm[5;2];0N!".math.st.perm case 1 PASSED";'".math.st.perm case 1 FAILED"];
 $[(0 1;0 2;0 3;0 4;1 2;1 3;1 4;2 3;2 4;3 4) ~ .math.st.comb[5;2];0N!".math.st.comb case 1 PASSED";'".math.st.comb case 1 FAILED"];
