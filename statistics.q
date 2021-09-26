@@ -33,6 +33,13 @@
 .math.st.subsets: {c: count x;x where each (neg c)#'(c#0b),/:`boolean$2 vs/: til `long$2 xexp c};
 
 
+// Returns amount of chooses of n from k
+// @n - n
+// @k - k
+// Example: .math.st.cnk[5;3] returns 10
+.math.st.cnk: {[n;k] `long$prd(1+til n)%(1+til k),1+til n-k};
+
+
 // Returns distribution's standardized y^{th} moment
 // @x [`number$()] - distribution
 // @y [`int] - distribution moment
